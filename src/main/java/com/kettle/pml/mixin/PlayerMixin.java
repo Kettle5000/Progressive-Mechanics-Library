@@ -14,18 +14,11 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 import com.kettle.pml.core.PMLDamageTypes;
 import com.llamalad7.mixinextras.sugar.Local;
 
-@Debug(export = true)
 @Mixin(Player.class)
 public class PlayerMixin {
 
 	//Aims for Flag5 so when dealing a critical hit, damage is done as one
-	@Redirect(
-	        method = "attack", 
-	        at = @At(
-	            value = "INVOKE", 
-	            target = "Lnet/minecraft/world/entity/Entity;hurt(Lnet/minecraft/world/damagesource/DamageSource;F)Z", ordinal = 0
-	        )
-	    )
+	@Redirect(method = "attack", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;hurt(Lnet/minecraft/world/damagesource/DamageSource;F)Z", ordinal = 0))
 	private boolean modifyDamageFlag(Entity target, DamageSource originalSource, float originalDamage, @Local(ordinal = 2) boolean flag2) {
 		Player player = getThis();
 		if (flag2) {
@@ -35,8 +28,7 @@ public class PlayerMixin {
 		return target.hurt(originalSource, originalDamage);
 	}
 	
-	@ModifyArg(method = {
-			"attack" }, at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;hurt(Lnet/minecraft/world/damagesource/DamageSource;F)Z", ordinal = 0), index = 0)
+	@ModifyArg(method = {"attack"}, at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;hurt(Lnet/minecraft/world/damagesource/DamageSource;F)Z", ordinal = 0), index = 0)
 	private DamageSource modifySweepAttackDamage(DamageSource original) {
 		Player player = getThis();
 		if (original.is(DamageTypes.PLAYER_ATTACK)) {
