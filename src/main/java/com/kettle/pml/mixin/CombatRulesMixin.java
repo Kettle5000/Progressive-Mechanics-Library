@@ -13,8 +13,6 @@ import net.minecraft.world.damagesource.CombatRules;
 @Mixin(CombatRules.class)
 public class CombatRulesMixin {
 
-    // Reference to a static field to store the armor reduction value
-
     // Intercept the getDamageAfterAbsorb method
     @Inject(method = "getDamageAfterAbsorb", at = @At("RETURN"), cancellable = true)
     private static void captureArmorReduction(float damage, float armorValue, float toughness, CallbackInfoReturnable<Float> cir) {
