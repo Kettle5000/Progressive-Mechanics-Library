@@ -1,0 +1,8 @@
+{
+  "death.attack.player_critical": "%1$s died",
+  "death.attack.player_critical": "%1$s died whilst trying to escape %2$s",
+  "death.attack.player_critical.item": "%1$s was slain by %2$s using %3$s",
+  "death.attack.sweeping_damage": "%1$s died",
+  "death.attack.sweeping_damage": "%1$s died whilst trying to escape %2$s",
+  "death.attack.sweeping_damage.item": "%1$s was slain by %2$s using %3$s"
+}

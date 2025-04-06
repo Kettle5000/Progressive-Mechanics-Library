@@ -1,0 +1,12 @@
+{
+	"required": true,
+	"package": "com.kettle.pml.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"refmap": "pml.mixins.refmap.json",
+	"mixins": [
+		"CombatRulesMixin",
+		"ArmorUtilsMixin",
+		"PlayerMixin"
+	],
+	"minVersion": "0.8"
+}

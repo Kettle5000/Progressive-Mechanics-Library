@@ -1,0 +1,22 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="Academic Free License v3.0"
+
+[[mods]]
+modId="pml"
+version="1.0.0"
+displayName="Progressive Mechanics Library"
+credits="Library mod for Progressive Tweaks and other mods. Allow high control over damage done, potion effects, combat related mechanics."
+authors="Kettle5000"
+description="1.20.1"
+
+# Start of user code block mod configuration
+# End of user code block mod configuration
+
+[[dependencies.pml]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1,1.21)"
+    ordering="NONE"
+    side="BOTH"
+
