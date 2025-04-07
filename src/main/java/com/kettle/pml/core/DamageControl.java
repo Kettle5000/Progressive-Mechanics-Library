@@ -1,7 +1,7 @@
 package com.kettle.pml.core;
 
 public class DamageControl {
-	private float weapondamagecontrol; // this should only be used to reduce damage done by the weapon only, before everything is calculated
+    private float weapondamagecontrol; // this should only be used to reduce damage done by the weapon only, before everything is calculated
     private float baseFlatBonus;   // Base flat damage (e.g., +10)
     private float basePercentBonus; // Base % damage (e.g., +20%)
     private float flatBonus;        // Additional flat damage (e.g., +5)
